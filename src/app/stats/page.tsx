@@ -1,4 +1,5 @@
 'use client'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import BottomNav from '@/components/BottomNav'
 
@@ -33,6 +34,9 @@ function SummaryCard({ icon, value, label, delay }: { icon: string; value: strin
 }
 
 export default function Stats() {
+  const [loading, setLoading] = useState(true)
+  useEffect(() => { const t = setTimeout(() => setLoading(false), 800); return () => clearTimeout(t) }, [])
+
   const totalValue = CARDS.reduce((s, c) => s + c.value, 0)
   const totalCards = CARDS.length
   const rareCards = CARDS.filter(c => RARE_TYPES.some(r => c.name.toLowerCase().includes(r))).length
@@ -52,6 +56,29 @@ export default function Stats() {
     { icon: '⭐', value: String(rareCards),                  label: 'Rare Cards',    delay: 0.15 },
     { icon: '📈', value: `$${mostValuable.toLocaleString()}`, label: 'Most Valuable', delay: 0.20 },
   ]
+
+  if (loading) return (
+    <main className="page">
+      <div className="skeleton" style={{ height: 24, width: 140, marginBottom: 16 }} />
+      <div style={{ display: 'flex', gap: 12, marginBottom: 20 }}>
+        {[1,2,3].map(i => <div key={i} className="skeleton" style={{ flex: 1, height: 80 }} />)}
+      </div>
+      <div className="skeleton" style={{ height: 200, marginBottom: 16 }} />
+      <div className="skeleton" style={{ height: 160 }} />
+      <BottomNav />
+    </main>
+  )
+
+  if (CARDS.length === 0) return (
+    <main className="page">
+      <div style={{ textAlign: 'center', padding: '4rem 1rem' }}>
+        <p style={{ fontSize: 48, marginBottom: 12 }}>📊</p>
+        <p style={{ fontWeight: 600, marginBottom: 4 }}>No stats yet</p>
+        <p style={{ fontSize: 13, color: 'var(--muted)' }}>Add cards to see your collection stats</p>
+      </div>
+      <BottomNav />
+    </main>
+  )
 
   return (
     <main className="page">

@@ -1,0 +1,64 @@
+
+🔍 CHECK 1: TypeScript Compilation
+──────────────────────────────────────────────────
+  ✅ TypeScript compiles with zero errors
+
+🔍 CHECK 2: Page Route Scan
+──────────────────────────────────────────────────
+  ✅ / — valid default export
+  ✅ /binder — valid default export
+  ✅ /scan — valid default export
+  ✅ /settings — valid default export
+  ✅ /stack — valid default export
+  ✅ /stats — valid default export
+
+🔍 CHECK 3: Design Token Audit
+──────────────────────────────────────────────────
+  ❌ [WARN] src/app/scan/page.tsx:48 — Non-standard border-radius: 20px (allowed: 16, 12, 10, 999, 24, 8, 2)
+  ❌ [WARN] src/app/scan/page.tsx:86 — Non-standard border-radius: 14px (allowed: 16, 12, 10, 999, 24, 8, 2)
+  ❌ [WARN] src/app/scan/page.tsx:91 — Non-standard border-radius: 14px (allowed: 16, 12, 10, 999, 24, 8, 2)
+  ❌ [WARN] src/app/stack/page.tsx:52 — Non-standard border-radius: 9px (allowed: 16, 12, 10, 999, 24, 8, 2)
+  ❌ [WARN] src/app/stack/page.tsx:91 — Non-standard border-radius: 6px (allowed: 16, 12, 10, 999, 24, 8, 2)
+
+🔍 CHECK 4: Import Validation
+──────────────────────────────────────────────────
+  ✅ All imports resolve correctly
+
+🔍 CHECK 5: Empty / Loading State Check
+──────────────────────────────────────────────────
+  ✅ src/app/page.tsx — has empty/loading state
+  ✅ src/app/binder/page.tsx — has empty/loading state
+  ✅ src/app/scan/page.tsx — has empty/loading state
+  ✅ src/app/settings/page.tsx — has empty/loading state
+  ✅ src/app/stack/page.tsx — has empty/loading state
+  ❌ [WARN] src/app/stats/page.tsx — No empty/loading state pattern detected
+
+🔍 CHECK 6: BottomNav Consistency
+──────────────────────────────────────────────────
+  ✅ src/app/page.tsx — BottomNav present
+  ✅ src/app/binder/page.tsx — BottomNav present
+  ✅ src/app/scan/page.tsx — BottomNav present
+  ✅ src/app/settings/page.tsx — BottomNav present
+  ✅ src/app/stack/page.tsx — BottomNav present
+  ✅ src/app/stats/page.tsx — BottomNav present
+
+══════════════════════════════════════════════════
+🪲 BRUTUS QA REPORT — CardVault Caesar
+══════════════════════════════════════════════════
+
+✅ Passed: 19
+❌ Errors: 0
+⚠️  Warnings: 6
+📊 Total Issues: 6
+
+── Issue Details ──
+  [WARN] design-tokens | src/app/scan/page.tsx:48 | Non-standard border-radius: 20px (allowed: 16, 12, 10, 999, 24, 8, 2)
+  [WARN] design-tokens | src/app/scan/page.tsx:86 | Non-standard border-radius: 14px (allowed: 16, 12, 10, 999, 24, 8, 2)
+  [WARN] design-tokens | src/app/scan/page.tsx:91 | Non-standard border-radius: 14px (allowed: 16, 12, 10, 999, 24, 8, 2)
+  [WARN] design-tokens | src/app/stack/page.tsx:52 | Non-standard border-radius: 9px (allowed: 16, 12, 10, 999, 24, 8, 2)
+  [WARN] design-tokens | src/app/stack/page.tsx:91 | Non-standard border-radius: 6px (allowed: 16, 12, 10, 999, 24, 8, 2)
+  [WARN] empty-states | src/app/stats/page.tsx | No empty/loading state pattern detected
+
+🔴 6 issue(s) found — fix required
+
+Timestamp: 2026-03-02T22:53:55.095Z

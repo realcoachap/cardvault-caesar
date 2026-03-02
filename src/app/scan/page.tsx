@@ -45,7 +45,7 @@ export default function Scan() {
 
       {/* Viewfinder */}
       <div style={{ position: 'relative', width: '100%', maxWidth: 360, aspectRatio: '3/4',
-        background: 'rgba(0,0,0,0.6)', borderRadius: 20, overflow: 'hidden', marginBottom: 24 }}>
+        background: 'rgba(0,0,0,0.6)', borderRadius: 16, overflow: 'hidden', marginBottom: 24 }}>
         {/* Gold card cutout border */}
         <div style={{ position: 'absolute', top: '10%', left: '8%', right: '8%', bottom: '10%',
           border: `2px solid var(--gold)`, borderRadius: 12, zIndex: 2 }}>
@@ -83,12 +83,12 @@ export default function Scan() {
       {/* Actions */}
       <div style={{ display: 'flex', gap: 12, width: '100%', marginBottom: 16 }}>
         <motion.button onClick={() => fileRef.current?.click()}
-          style={{ flex: 1, padding: '14px', borderRadius: 14, background: 'var(--gold)', color: '#000', fontWeight: 700, border: 'none', cursor: 'pointer', fontSize: 15 }}
+          style={{ flex: 1, padding: '14px', borderRadius: 12, background: 'var(--gold)', color: '#000', fontWeight: 700, border: 'none', cursor: 'pointer', fontSize: 15 }}
           whileTap={{ scale: 0.97 }} transition={{ type: 'spring', damping: 28, stiffness: 320 }}>
           📷 Take Photo
         </motion.button>
         <motion.button onClick={() => setManual(m => !m)}
-          style={{ flex: 1, padding: '14px', borderRadius: 14, background: 'var(--surface)', color: '#fff', fontWeight: 600, border: '1px solid var(--border)', cursor: 'pointer', fontSize: 15 }}
+          style={{ flex: 1, padding: '14px', borderRadius: 12, background: 'var(--surface)', color: '#fff', fontWeight: 600, border: '1px solid var(--border)', cursor: 'pointer', fontSize: 15 }}
           whileTap={{ scale: 0.97 }} transition={{ type: 'spring', damping: 28, stiffness: 320 }}>
           ✏️ Manual
         </motion.button>

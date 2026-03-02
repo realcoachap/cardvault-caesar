@@ -49,7 +49,7 @@ export default function Stack() {
       <div style={{ display: 'flex', background: 'var(--surface)', borderRadius: 12, padding: 4, marginBottom: 20, border: '1px solid var(--border)' }}>
         {(['portfolio','sell'] as const).map(m => (
           <motion.button key={m} onClick={() => setMode(m)}
-            style={{ flex: 1, padding: '10px', borderRadius: 9, fontWeight: 600, fontSize: 14, border: 'none', cursor: 'pointer',
+            style={{ flex: 1, padding: '10px', borderRadius: 10, fontWeight: 600, fontSize: 14, border: 'none', cursor: 'pointer',
               background: mode === m ? 'var(--gold)' : 'transparent',
               color: mode === m ? '#000' : 'var(--muted)' }}
             whileTap={{ scale: 0.97 }} transition={{ type: 'spring', damping: 28, stiffness: 320 }}>
@@ -88,7 +88,7 @@ export default function Stack() {
             <motion.div key={c.name} className="card" style={{ padding: '0.875rem', marginBottom: 8, display: 'flex', alignItems: 'center', gap: 12, cursor: 'pointer' }}
               onClick={() => toggleSelect(c.name)}
               whileTap={{ scale: 0.97 }} transition={{ type: 'spring', damping: 28, stiffness: 320 }}>
-              <div style={{ width: 22, height: 22, borderRadius: 6, border: `2px solid ${selected.has(c.name) ? 'var(--gold)' : 'var(--border)'}`,
+              <div style={{ width: 22, height: 22, borderRadius: 8, border: `2px solid ${selected.has(c.name) ? 'var(--gold)' : 'var(--border)'}`,
                 background: selected.has(c.name) ? 'var(--gold)' : 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                 {selected.has(c.name) && <span style={{ fontSize: 12, color: '#000', fontWeight: 700 }}>✓</span>}
               </div>
