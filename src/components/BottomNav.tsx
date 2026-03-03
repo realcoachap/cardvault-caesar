@@ -4,12 +4,11 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 
 const NAV = [
-  { href: '/',         icon: '🏠', label: 'Home'     },
-  { href: '/binder',   icon: '📦', label: 'Binder'   },
-  { href: '/stack',    icon: '💰', label: 'Stack'     },
-  { href: '/scan',     icon: '📸', label: 'Scan'      },
-  { href: '/stats',    icon: '📊', label: 'Stats'     },
-  { href: '/settings', icon: '⚙️', label: 'Settings'  },
+  { href: '/',              icon: '🏠', label: 'Home'    },
+  { href: '/binder',        icon: '📦', label: 'Binder'  },
+  { href: '/marketplace',   icon: '🏪', label: 'Market'  },
+  { href: '/scan',          icon: '📸', label: 'Scan'    },
+  { href: '/stats',         icon: '📊', label: 'Stats'   },
 ]
 
 export default function BottomNav() {
